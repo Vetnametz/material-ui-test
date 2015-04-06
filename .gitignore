@@ -1,6 +1,5 @@
 .idea/
 build/
-gulp/
 node_modules/
 1280px.jpg
 
@@ -8,4 +7,3 @@ node_modules/
 
 Website-EasyStartQuestionare-20150203.ai
 
-gulpfile.js
