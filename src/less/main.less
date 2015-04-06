@@ -1,7 +1,6 @@
 /* material-ui */
 @import "node_modules/material-ui/src/less/scaffolding.less";
 
-
 //Define a custom less file to override any variables defined in scaffolding.less
 @import "custom-overrides.less";
 
@@ -77,14 +76,18 @@
   font-size: 22px;
 }
 .title-h2 {
-  margin-bottom:30px;
-  padding-top: 28px;
+  padding: 0;
+  margin-bottom:27px;
   padding-left: 18px;
   letter-spacing: -1.4px;
   color: @yellow-800;
 }
-.row-group.dropdown-inline,
-.row-group.text-field {
+.title-h2:first-child {
+  margin-bottom:30px;
+  padding-top: 28px;
+}
+.dropdown-inline,
+.text-field {
   position: relative;
   height: @desktop-toolbar-height;
   line-height: @desktop-toolbar-height;
@@ -133,23 +136,58 @@
   .mui-drop-down-menu.large {
     width: 570px;
   }
+//  .mui-drop-down-menu.default-size {
+//    width: 570px;
+//  }
 }
-.row-group.text-field {
-  .mui-text-field {
-    margin: 0 20px 0 20px;
+.text-field {
+.mui-text-field {
+    background: #fff;
+    margin: 0 14px 0 20px;
+    height: @desktop-gutter-more;
+    line-height: @desktop-gutter-more;
     .mui-text-field-hint {
-      z-index: 1;
       font-size: 23px;
+      line-height: @desktop-gutter-more;
     }
     .mui-text-field-input {
-      background: #fff;
+
+    }
+    .mui-text-field-underline,
+    .mui-text-field-focus-underline{
+      bottom: 0;
+    }
+    .mui-text-field-error {
+      bottom: -15px;
     }
   }
   .default-size {
-    width: 242px;
+    width: 250px;
   }
   .short-size {
     width: 40px;
+    .mui-text-field-hint{
+      left:0;
+      right: 0;
+      text-align: center;
+    }
+    .mui-text-field-error {
+      width: 60px;
+      left: -12px;
+    }
   }
 }
-sadfvasvd
+.row-mixed {
+  .mui-drop-down-menu {
+    width: 250px;
+    top: 13px;
+    margin: 0 10px;
+  }
+  .default-size {
+    width: 195px;
+  }
+  .mui-drop-down-menu.mui-open {
+    width: 250px;
+  }
+}
+//sadfvasvd

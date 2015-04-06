@@ -5,7 +5,8 @@ var React = require('react'),
   RaisedButton = mui.RaisedButton,
   DropDownMenu = mui.DropDownMenu,
   AppCanvas = mui.AppCanvas,
-  TextField = mui.TextField;
+  TextField = mui.TextField,
+  Toolbar = mui.ToolBar;
 
 var menuItemsIwant = [
   { payload: '1', text: '[Select a finacial purpose]' },
@@ -23,17 +24,27 @@ var menuItemsIcan = [
   { payload: '5', text: 'Weekly' }
 ];
 
+var menuItemsHousing = [
+  { payload: '1', text: '[Select housing]' },
+  { payload: '2', text: 'Every Night' },
+  { payload: '3', text: 'Weeknights' },
+  { payload: '4', text: 'Weekends' },
+  { payload: '5', text: 'Weekly' }
+];
+
 //TextField.propTypes._handleErrorInputChange = function () {
 //  this.propTypes.errorText();
 //};
-console.log(TextField.propTypes);
+//console.log(TextField.propTypes);
 
 var Main = React.createClass({
 
   getInitialState: function() {
     return {
       errorTextName: 'Please, type your Name',
-      errorTextAge: 'Check Age'
+      errorTextAge: 'Check Age',
+      errorTextCity: 'Type City',
+      errorTextState: 'Type State'
     };
   },
 
@@ -88,27 +99,38 @@ var Main = React.createClass({
                   onChange={this._handleErrorInputChange} />
                 <span>years of age.</span>
               </div>
-              <div id="i-can" className="row-group dropdown-inline text-field">
-                <span className="dropdown-label">So I can</span>
+              <div className="row-mixed dropdown-inline text-field">
+                <span>I</span>
+                <DropDownMenu
+                  hintText="I"
+                  menuItems={menuItemsHousing}
+                  autoWidth={false}
+                  />
+                <span>in</span>
+                <TextField
+                  id="city"
+                  className="default-size"
+                  hintText="City"
+                  errorText={this.state.errorTextCity}
+                  onChange={this._handleErrorInputChange} />
+                <span>,</span>
+                <TextField
+                  id="state"
+                  className="short-size"
+                  hintText="ST"
+                  errorText={this.state.errorTextState}
+                  onChange={this._handleErrorInputChange} />
+              </div>
+              <div className="row-group dropdown-inline">
+                <span className="dropdown-label">Where I live</span>
                 <DropDownMenu
                   className="large"
-                  hintText="Select i Can"
-                  menuItems={menuItemsIcan}
+                  menuItems={menuItemsIwant}
                   autoWidth={false}/>
-                <TextField
-                  id="name"
-                  className="default-size"
-                  hintText="Full name"
-                  errorText={this.state.errorTextName}
-                  onChange={this._handleErrorInputChange} />
-                <span>and I am</span>
-                <TextField
-                  id="age"
-                  className="short-size"
-                  hintText="00"
-                  errorText={this.state.errorTextAge}
-                  onChange={this._handleErrorInputChange} />
-                <span>years of age.</span>
+                <DropDownMenu
+                  className="large"
+                  menuItems={menuItemsIwant}
+                  autoWidth={false}/>
               </div>
             </div>
           </div>
@@ -130,6 +152,15 @@ var Main = React.createClass({
     } else if (e.target.id === 'age') {
       this.setState({
         errorTextAge: e.target.value ? '' : 'Check Age'
+      });
+    } else if (e.target.id === 'city') {
+      this.setState({
+        errorTextCity: e.target.value ? '' : 'Type City'
+      });
+    }
+    else if (e.target.id === 'state') {
+      this.setState({
+        errorTextState: e.target.value ? '' : 'Type State'
       });
     }
   }
