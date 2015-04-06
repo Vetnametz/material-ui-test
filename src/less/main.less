@@ -1,0 +1,155 @@
+/* material-ui */
+@import "node_modules/material-ui/src/less/scaffolding.less";
+
+
+//Define a custom less file to override any variables defined in scaffolding.less
+@import "custom-overrides.less";
+
+@import "node_modules/material-ui/src/less/components.less";
+
+//---------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------mui overrides----------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
+.mui-app-bar {
+  background: @grey-100;
+}
+.mui-app-bar .mui-app-bar-title {
+  width: 118px;
+  height: @desktop-keyline-increment;
+  margin: 0;
+}
+.mui-app-bar-title img {
+  margin: 4px 0 0;
+}
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.mui-paper > .mui-paper-container {
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .mui-paper > .mui-paper-container {
+    width: 81.6%;
+    margin: 0 auto;
+  }
+}
+.mui-app-content-canvas {
+  background: url("../images/bg_easystart1600_670.jpg") center no-repeat;
+  background-size: 100%;
+}
+.mui-key-height-1 {
+  height: @desktop-keyline-increment - 12;
+  background: @brown-700;
+}
+.mui-paper.mui-z-depth-1 {
+  background: @grey-100;
+}
+//---------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------custom styles----------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
+.page-content {
+  padding: 24px;
+  max-width: 834px;
+  font-size: 24px;
+  color: @brown-900;
+}
+@media only screen and (min-width: 768px) {
+  .page-content {
+    margin-left: 11%;
+    min-height: 603px;
+  }
+}
+.user-name:before {
+  content: "\f005";
+  font-size: 30px;
+  position: absolute;
+  left: -34px;
+  top: -2px;
+  color: @yellow-800;
+}
+.user-name {
+  margin: 5px 17px 0 0;
+  line-height: @desktop-keyline-increment;
+  float: right;
+  color: @light-green-400;
+  font-size: 22px;
+}
+.title-h2 {
+  margin-bottom:30px;
+  padding-top: 28px;
+  padding-left: 18px;
+  letter-spacing: -1.4px;
+  color: @yellow-800;
+}
+.row-group.dropdown-inline,
+.row-group.text-field {
+  position: relative;
+  height: @desktop-toolbar-height;
+  line-height: @desktop-toolbar-height;
+  margin: 0 30px 43px 76px;
+  text-align: right;
+  .dropdown-label {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+  }
+  .mui-drop-down-menu {
+    .mui-menu-control {
+      .mui-menu-label {
+        font-size: 23px;
+        padding: 0;
+        letter-spacing: 0.9px;
+        color: @grey-500;
+      }
+      .mui-menu-control-bg {
+        opacity: 1;
+      }
+      .mui-menu-control-underline {
+        border-width: 2px;
+        margin: 0;
+      }
+      .mui-menu-drop-down-icon {
+        top: 0;
+        right: 1px;
+      }
+      .mui-svg-icon {
+        width: 34px;
+        height: 34px;
+      }
+      .mui-menu-drop-down-icon * {
+        fill: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+  .mui-drop-down-menu.mui-open {
+    @media only screen and (min-width: 768px) {
+      .mui-paper > .mui-paper-container {
+        width: 100%;
+      }
+    }
+  }
+  .mui-drop-down-menu.large {
+    width: 570px;
+  }
+}
+.row-group.text-field {
+  .mui-text-field {
+    margin: 0 20px 0 20px;
+    .mui-text-field-hint {
+      z-index: 1;
+      font-size: 23px;
+    }
+    .mui-text-field-input {
+      background: #fff;
+    }
+  }
+  .default-size {
+    width: 242px;
+  }
+  .short-size {
+    width: 40px;
+  }
+}
+sadfvasvd
