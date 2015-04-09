@@ -15,7 +15,6 @@ var menuItemsIwant = [
   { payload: '4', text: 'Weekends' },
   { payload: '5', text: 'Weekly' }
 ];
-
 var menuItemsIcan = [
   { payload: '1', text: '[Select an objective]' },
   { payload: '2', text: 'Every Night' },
@@ -23,7 +22,6 @@ var menuItemsIcan = [
   { payload: '4', text: 'Weekends' },
   { payload: '5', text: 'Weekly' }
 ];
-
 var menuItemsHousing = [
   { payload: '1', text: '[Select housing]' },
   { payload: '2', text: 'Every Night' },
@@ -31,7 +29,6 @@ var menuItemsHousing = [
   { payload: '4', text: 'Weekends' },
   { payload: '5', text: 'Weekly' }
 ];
-
 var menuItemsIlive = [
   { payload: '1', text: '[Select family mambers]' },
   { payload: '2', text: 'Every Night' },
@@ -39,7 +36,6 @@ var menuItemsIlive = [
   { payload: '4', text: 'Weekends' },
   { payload: '5', text: 'Weekly' }
 ];
-
 var menuItemsLifestyle = [
   { payload: '1', text: '[Select lifestyle]' },
   { payload: '2', text: 'Every Night' },
@@ -47,7 +43,6 @@ var menuItemsLifestyle = [
   { payload: '4', text: 'Weekends' },
   { payload: '5', text: 'Weekly' }
 ];
-
 var menuItemsLifestyle2 = [
   { payload: '1', text: '[Select savings]' },
   { payload: '2', text: 'Every Night' },
@@ -55,7 +50,6 @@ var menuItemsLifestyle2 = [
   { payload: '4', text: 'Weekends' },
   { payload: '5', text: 'Weekly' }
 ];
-
 var menuItemsIncome = [
   { payload: '1', text: '[Select your yearly income]' },
   { payload: '2', text: 'Every Night' },
@@ -63,7 +57,6 @@ var menuItemsIncome = [
   { payload: '4', text: 'Weekends' },
   { payload: '5', text: 'Weekly' }
 ];
-
 var Content = React.createClass({
 
   getInitialState: function() {
@@ -230,8 +223,7 @@ var Content = React.createClass({
                     <Snackbar
                       ref="snackbar"
                       message="Invalid input, please check and try again"
-                      //action="undo"
-                      onActionTouchTap={this._handleAction} />
+                    />
                   </div>
 
                 </Paper>
@@ -246,6 +238,7 @@ var Content = React.createClass({
 
   _handleErrorInputChange: function(e) {
     if (e.target.id === 'name') {
+      console.log(e.target.value);
       this.setState({
         errorTextName: e.target.value ? '' : 'Please, type your Name'
       });
@@ -266,49 +259,17 @@ var Content = React.createClass({
 
   _handleClick: function(e) {
     this.refs.snackbar.show();
-
-
-    if (this.refs.textfield) {
-      //console.log(this.refs.textfield);
-      console.log(this.refs.textfield.props);
-      //console.log(e);
-      //console.log(this.refs.textfield.getValue());
-      
+    //TODO: find a way to change errorText for all empty TextField
+    if (this.refs.textfield && this.refs.textfield.getValue().length === 0) {
       this.setState({
-        errorTextState: e.target.value ? '' : 'Type State',
-        errorTextCity: e.target.value ? '' : 'Type City',
-        errorTextAge: e.target.value ? '' : 'Check Age',
-        errorTextName: e.target.value ? '' : 'Please, type your Name'
+        errorTextState: 'Type State',
+        errorTextCity: 'Type City',
+        errorTextAge: 'Check Age',
+        errorTextName: 'Please, type your Name'
       });
 
-
-      //var textfield = this.refs.textfield;
-      //
-      //
-      //if (e.target.id === 'name') {
-      //  this.setState({
-      //    errorTextName: e.target.value ? '' : 'Please, type your Name'
-      //  });
-      //} else if (e.target.id === 'age') {
-      //  this.setState({
-      //    errorTextAge: e.target.value ? '' : 'Check Age'
-      //  });
-      //} else if (e.target.id === 'city') {
-      //  this.setState({
-      //    errorTextCity: e.target.value ? '' : 'Type City'
-      //  });
-      //} else if (e.target.id === 'state') {
-      //  this.setState({
-      //    errorTextState: e.target.value ? '' : 'Type State'
-      //  });
-      //}
     }
 
-  },
-
-  _handleAction: function() {
-    //We can add more code here! In this example, we'll just include an alert.
-    alert("We removed the event from your calendar.");
   }
 
 });

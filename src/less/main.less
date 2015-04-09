@@ -94,7 +94,6 @@
     bottom: -24px;
   }
 }
-
 .mui-flat-button {
   margin: 15px 0;
   background: #FAFAFA;
@@ -120,6 +119,34 @@
 //---------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------custom styles----------------------------------------------------------
 //---------------------------------------------------------------------------------------------------------------------
+@media (min-width:768px){
+  .container{width:750px}
+}
+@media (min-width:992px){
+  .container{width:970px}
+}
+@media (min-width:1200px){
+  .container{width:1170px}
+}
+@media only screen and (min-width: 768px) {
+  .page-with-nav .page-with-nav-content {
+    min-height: 670px;
+    padding:19px 24px;
+  }
+  .mui-drop-down-menu.dropdown-long {
+    width: 427px !important;
+  }
+  .mui-drop-down-menu.dropdown-short {
+    width: 150px !important;
+  }
+  //  .mui-text-field.text-field-long {
+  //    width: 190px;
+  //  }
+  //  .mui-text-field.text-field-short {
+  //    width: 40px;
+  //  }
+}
+
 .header {
   height: @header-height;
   width: 79%;
@@ -157,8 +184,6 @@
     }
   }
 }
-
-
 .container-fluid {
   padding-right:15px;
   padding-left:15px;
@@ -170,7 +195,8 @@
   margin-right: -15px;
 }
 .row.main-bg {
-  background: #0000ed url("../images/bg_easystart1600_670.jpg") no-repeat;
+  background: url("../images/bg_easystart1600_670.jpg") no-repeat;
+  background-size: cover;
 }
 .row.color-bg {
   height: @separate-line;
@@ -181,33 +207,6 @@
   padding-left:15px;
   margin-right:auto;
   margin-left:auto
-}
-@media (min-width:768px){
-  .container{width:750px}
-}
-@media (min-width:992px){
-  .container{width:970px}
-}
-@media (min-width:1200px){
-  .container{width:1170px}
-}
-@media only screen and (min-width: 768px) {
-  .page-with-nav .page-with-nav-content {
-    min-height: 670px;
-    padding:19px 24px;
-  }
-  .mui-drop-down-menu.dropdown-long {
-    width: 427px !important;
-  }
-  .mui-drop-down-menu.dropdown-short {
-    width: 150px !important;
-  }
-//  .mui-text-field.text-field-long {
-//    width: 190px;
-//  }
-//  .mui-text-field.text-field-short {
-//    width: 40px;
-//  }
 }
 .page-with-nav .page-with-nav-content {
   max-width: 658px;
