@@ -109,11 +109,16 @@
 .mui-flat-button.mui-is-keyboard-focused {
   background-color: @btn-hover;
 }
-.mui-snackbar {
-  bottom: 90px;
-}
+//.mui-snackbar {
+//  bottom: 90px;
+//}
 .mui-snackbar.mui-is-open {
-  left: 256px;
+  left: 0;
+  right: 0;
+  bottom: 89px;
+  position: absolute;
+  margin: auto;
+  width: 390px;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -209,6 +214,7 @@
   margin-left:auto
 }
 .page-with-nav .page-with-nav-content {
+  position: relative;
   max-width: 658px;
   font-size: 18px;
   color: @brown-800;
